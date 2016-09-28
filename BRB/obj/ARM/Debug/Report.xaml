@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="BRB.Report"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BRB"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock x:ConnectionId='1' x:Name="Title" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="White" Text="Отчет"/>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:ConnectionId='4' x:Name="Day" Grid.Column="0" TextAlignment="Center" FontSize="30" Foreground="White" Text="День"                     />
+            <TextBlock x:ConnectionId='5' x:Name="Yesterday" Grid.Column="1" TextAlignment="Center" FontSize="30" Foreground="White" Text="Вчера"                      />
+            <TextBlock x:ConnectionId='6' x:Name="Week" Grid.Column="2" TextAlignment="Center" FontSize="30" Foreground="White" Text="Неделя"                     />
+            <TextBlock x:ConnectionId='7' x:Name="Month" Grid.Column="3" TextAlignment="Center" FontSize="30" Foreground="White" Text="Месяц"                     />
+            <TextBlock x:ConnectionId='8' x:Name="All" Grid.Column="4" TextAlignment="Center" FontSize="30" Foreground="White" Text="Все время"                     />
+        </Grid>
+        <ProgressRing x:ConnectionId='2' x:Name="Ring" Visibility="Collapsed" Canvas.ZIndex="5" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="5" Foreground="Red" Width="250" Height="250" />
+        <ListBox x:ConnectionId='3' x:Name="listview" Visibility="Visible" Grid.Column="1" Grid.Row="2" Background="Black" Grid.RowSpan="2">
+        </ListBox>  
+    </Grid>
+</Page>
+

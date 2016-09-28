@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 @2 Type=Contacts)" Category="CodeSchema_Class" Bounds="-9162.53183919271,-9756.51953125,87.126666666667,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="Contacts" Icon="Microsoft.VisualStudio.Class.Public" Label="Contacts" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/Contacts.xaml.cs StartLineNumber=19 StartCharacterOffset=32 EndLineNumber=19 EndCharacterOffset=40)" UseManualLocation="True" />
+    <Node Id="(@1 @2 Type=RSS)" Category="CodeSchema_Class" Bounds="-9213.61401041667,-9657.63932291667,60.9233333333323,26" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="RSS" Icon="Microsoft.VisualStudio.Class.Public" Label="RSS" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/RSS.cs StartLineNumber=13 StartCharacterOffset=24 EndLineNumber=13 EndCharacterOffset=27)" UseManualLocation="True" />
+    <Node Id="@10" Category="CodeSchema_Class" Bounds="-9338.63774214004,-9927.15516160917,113.34,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="MainPage" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="MainPage" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/MainPage.xaml.cs StartLineNumber=22 StartCharacterOffset=32 EndLineNumber=22 EndCharacterOffset=40)" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Class" Bounds="-9474.28913183992,-9870.95300153455,118.93,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ManagerMenu" Icon="Microsoft.VisualStudio.Class.Public" Label="ManagerMenu" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/ManagerMenu.xaml.cs StartLineNumber=20 StartCharacterOffset=32 EndLineNumber=20 EndCharacterOffset=43)" UseManualLocation="True" />
+    <Node Id="@12" Category="CodeSchema_Class" Bounds="-9214.3584375,-9868.15506160917,95.4199999999983,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="MenuUser" Icon="Microsoft.VisualStudio.Class.Public" Label="MenuUser" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/MenuUser.xaml.cs StartLineNumber=17 StartCharacterOffset=32 EndLineNumber=17 EndCharacterOffset=40)" UseManualLocation="True" />
+    <Node Id="@13" Category="CodeSchema_Class" Bounds="-9292.27211263021,-9808.25,70.0200000000004,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="News" Icon="Microsoft.VisualStudio.Class.Public" Label="News" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/News.xaml.cs StartLineNumber=19 StartCharacterOffset=32 EndLineNumber=19 EndCharacterOffset=36)" UseManualLocation="True" />
+    <Node Id="@14" Category="CodeSchema_Class" Bounds="-9161.52974609375,-9601.63922291667,121.080000000002,26" CodeSchemaProperty_IsPublic="True" CommonLabel="OperationClass" Icon="Microsoft.VisualStudio.Class.Public" Label="OperationClass" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/OperationClass.cs StartLineNumber=10 StartCharacterOffset=17 EndLineNumber=10 EndCharacterOffset=31)" UseManualLocation="True" />
+    <Node Id="@15" Category="CodeSchema_Class" Bounds="-9408.69877929598,-9805.0830078125,76.4266666666663,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="Report" Icon="Microsoft.VisualStudio.Class.Public" Label="Report" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/Report.xaml.cs StartLineNumber=18 StartCharacterOffset=32 EndLineNumber=18 EndCharacterOffset=38)" UseManualLocation="True" />
+    <Node Id="@16" Category="CodeSchema_Class" Bounds="-9522.80421223958,-9747.0829578125,134.806666666667,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchOperations" Icon="Microsoft.VisualStudio.Class.Public" Label="SearchOperations" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/SearchOperations.xaml.cs StartLineNumber=17 StartCharacterOffset=32 EndLineNumber=17 EndCharacterOffset=48)" UseManualLocation="True" />
+    <Node Id="@17" Category="CodeSchema_Class" Bounds="-9084.22380859375,-9665.74956171875,83.6399999999994,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="Settings" Icon="Microsoft.VisualStudio.Class.Public" Label="Settings" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/Settings.xaml.cs StartLineNumber=21 StartCharacterOffset=32 EndLineNumber=21 EndCharacterOffset=40)" UseManualLocation="True" />
+    <Node Id="@18" Category="CodeSchema_Class" Bounds="-9300.90517252604,-9713.63942291667,108.373333333333,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="TransferPage" Icon="Microsoft.VisualStudio.Class.Public" Label="TransferPage" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/TransferPage.xaml.cs StartLineNumber=18 StartCharacterOffset=32 EndLineNumber=18 EndCharacterOffset=44)" UseManualLocation="True" />
+    <Node Id="@3" Category="CodeSchema_Class" Bounds="-9031.75190104167,-9739.74934895833,105.273333333331,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="AccountInfo" Icon="Microsoft.VisualStudio.Class.Public" Label="AccountInfo" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/AccountInfo.xaml.cs StartLineNumber=20 StartCharacterOffset=32 EndLineNumber=20 EndCharacterOffset=43)" UseManualLocation="True" />
+    <Node Id="@4" Category="CodeSchema_Class" Bounds="-9637.70171874839,-9809.21336615057,137.503333333334,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="AccountsWork" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="AccountsWork" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/AccountsWork.xaml.cs StartLineNumber=20 StartCharacterOffset=32 EndLineNumber=20 EndCharacterOffset=44)" UseManualLocation="True" />
+    <Node Id="@5" Category="CodeSchema_Class" Bounds="-9318.29100911458,-9983.65504978085,62.8466666666645,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsInternal="True" CommonLabel="App" Icon="Microsoft.VisualStudio.Class.Internal" Label="App" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/App.xaml.cs StartLineNumber=20 StartCharacterOffset=25 EndLineNumber=20 EndCharacterOffset=28)" UseManualLocation="True" />
+    <Node Id="@6" Category="CodeSchema_Class" Bounds="-9287.11899739583,-9567.111278125,71.376666666667,26" CodeSchemaProperty_IsPublic="True" CommonLabel="Client" Icon="Microsoft.VisualStudio.Class.Public" Label="Client" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/Client.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=23)" UseManualLocation="True" />
+    <Node Id="@7" Category="CodeSchema_Class" Bounds="-9392.31220703085,-9623.111378125,94.6500000000015,26" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="DBWorker" Icon="Microsoft.VisualStudio.Class.Public" Label="DBWorker" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/DBWorker.cs StartLineNumber=9 StartCharacterOffset=24 EndLineNumber=9 EndCharacterOffset=32)" UseManualLocation="True" />
+    <Node Id="@8" Category="CodeSchema_Class" Bounds="-9473.99991536458,-9563.51886205459,65.756666666668,26" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="Help" Icon="Microsoft.VisualStudio.Class.Public" Label="Help" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/Help.cs StartLineNumber=12 StartCharacterOffset=24 EndLineNumber=12 EndCharacterOffset=28)" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Class" Bounds="-9046.83615885417,-9824.75,78.5966666666645,26" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="History" Icon="Microsoft.VisualStudio.Class.Public" Label="History" SourceLocation="(Assembly=file:///C:/Users/djraz/Desktop/BRB/BRB/History.xaml.cs StartLineNumber=17 StartCharacterOffset=32 EndLineNumber=17 EndCharacterOffset=39)" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="@10" Target="@11" Bounds="-9376.08676523204,-9902.15516160917,64.830811336702,27.6693281405987" />
+    <Link Source="@10" Target="@12" Bounds="-9257.74103818491,-9902.15516160917,57.8986903634905,29.8733839685374" />
+    <Link Source="@10" Target="@7" Bounds="-9340.47345993337,-9902.15516160917,55.9190801890454,270.230549963833" />
+    <Link Source="@10" Target="@8" Bounds="-9431.0087890625,-9902.1552734375,145.6572265625,330.51953125" />
+    <Link Source="@11" Target="@15" Bounds="-9406.07351742759,-9844.95300153455,21.8118268888175,32.4038674535732" />
+    <Link Source="@11" Target="@16" Bounds="-9448.3407143727,-9844.95300153455,29.2581056968011,89.3172344733121" />
+    <Link Source="@11" Target="@4" Bounds="-9529.12650503749,-9844.95300153455,81.5843965051772,32.416342995135" />
+    <Link Source="@12" Target="(@1 @2 Type=Contacts)" Bounds="-9161.09606288269,-9842.15506160917,33.0404042288137,77.3588391596295" />
+    <Link Source="@12" Target="@13" Bounds="-9230.09036311621,-9842.15506160917,43.7778480733432,28.9417097604965" />
+    <Link Source="@12" Target="@17" Bounds="-9151.5751953125,-9842.1552734375,104.9189453125,167.5712890625" />
+    <Link Source="@12" Target="@18" Bounds="-9235.84104938201,-9842.15506160917,62.4560064647212,120.524809417744" />
+    <Link Source="@12" Target="@3" Bounds="-9147.66227566736,-9842.15506160917,142.134840412262,97.321035270139" />
+    <Link Source="@12" Target="@5" Bounds="-9250.0361328125,-9953.9443359375,75.8515625,85.7890625" />
+    <Link Source="@12" Target="@8" Bounds="-9427.6650390625,-9842.1552734375,254.0361328125,271.1103515625" />
+    <Link Source="@12" Target="@9" Bounds="-9120.4477807411,-9842.55161342894,65.0112447169558,17.734939531234" />
+    <Link Source="@13" Target="(@1 @2 Type=RSS)" Bounds="-9243.6455078125,-9782.25,60.9970703125,115.611328125" />
+    <Link Source="@15" Target="@14" Bounds="-9335.03125,-9779.0927734375,222.5390625,169.5703125" />
+    <Link Source="@15" Target="@7" Bounds="-9368.66386670841,-9779.0830078125,20.6060902365844,147.058752702033" />
+    <Link Source="@16" Target="@14" Bounds="-9425.873046875,-9721.0830078125,267.796875,116.5732421875" />
+    <Link Source="@16" Target="@7" Bounds="-9443.82261322996,-9721.0829578125,81.271212465077,91.2507789668507" />
+    <Link Source="@16" Target="@8" Bounds="-9454.3896215153,-9721.0829578125,11.5587894605396,148.591510264561" />
+    <Link Source="@17" Target="@5" Bounds="-9253.5634765625,-9953.5419921875,207.375,287.7919921875" />
+    <Link Source="@17" Target="@7" Bounds="-9288.712890625,-9640.1640625,205.966796875,24.0322265625" />
+    <Link Source="@17" Target="@8" Bounds="-9399.52525118099,-9642.04825090443,315.384567008523,80.8644209898775" />
+    <Link Source="@18" Target="@14" Bounds="-9205.517578125,-9687.6396484375,93.5146484375,78.033203125" />
+    <Link Source="@18" Target="@7" Bounds="-9324.25640218795,-9687.63942291667,63.4263170701652,58.4301804081006" />
+    <Link Source="@18" Target="@8" Bounds="-9431.431640625,-9687.6396484375,154.3056640625,115.9365234375" />
+    <Link Source="@3" Target="@6" Bounds="-9227.7109375,-9713.7490234375,225.9619140625,141.0947265625" />
+    <Link Source="@3" Target="@7" Bounds="-9309.5263671875,-9713.7490234375,285.2177734375,86.7724609375" />
+    <Link Source="@4" Target="@5" Bounds="-9556.595703125,-9954,232.650390625,144.787109375" />
+    <Link Source="@4" Target="@6" Bounds="-9507.400390625,-9784.212890625,243.205078125,209.4453125" />
+    <Link Source="@4" Target="@7" Bounds="-9563.8193359375,-9784.212890625,186.4423828125,156.875" />
+    <Link Source="@5" Target="@10" Bounds="-9285.73018891448,-9957.65504978085,1.88421583883428,21.5341439276963" />
+    <Link Source="@7" Target="@14" Bounds="-9297.6623046875,-9605.94666604871,127.167206520837,11.1908809793113" />
+    <Link Source="@7" Target="@5" Bounds="-9343.5068359375,-9953.3115234375,23.9892578125,330.2001953125" />
+    <Link Source="@7" Target="@6" Bounds="-9323.26881821963,-9597.111328125,42.397358366934,25.3777195563562" />
+    <Link Source="@7" Target="@8" Bounds="-9412.50065561525,-9597.111328125,46.5419221222146,28.8509187046529" />
+    <Link Source="@9" Target="@14" Bounds="-9099.4736328125,-9798.75,83.5380859375,188.1318359375" />
+    <Link Source="@9" Target="@7" Bounds="-9309.5263671875,-9798.75,291.2265625,171.7734375" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Class" Label="Класс" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Классы" />
+    <Category Id="CodeSchema_Type" Label="Тип" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Типы" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsFinal" Label="Является Final" Description="Флаг, указывающий, что член является Final, и не допускает наследования" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Является Internal" Description="Флаг, указывающий, что метод является Internal" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="Является Public" Description="Флаг, указывающий на область видимости Public" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsStatic" Label="Является статическим" Description="Флаг, указывающий, что член является статическим" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="Виртуализированные данные" Description="При значении true граф может содержать узлы и связи, которые представляют данные для виртуализированных узлов и связей (то есть которые не были фактически созданы в графе)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="Группа" Description="Отображать узел как группу" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Значок" Description="Значок" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Метка" Description="Отображаемая метка аннотируемого объекта" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Номер начальной строки" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Сборка" ValueType="Uri" />
+    <Name Id="Namespace" Label="Пространство имен" ValueType="System.String" />
+    <Name Id="Type" Label="Тип" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(82e77007-a20d-4c3f-a4e2-8fd24cda9030.OutputPathUri)" />
+    <Alias n="2" Id="Namespace=BRB" />
+    <Alias n="3" Id="(@1 @2 Type=AccountInfo)" />
+    <Alias n="4" Id="(@1 @2 Type=AccountsWork)" />
+    <Alias n="5" Id="(@1 @2 Type=App)" />
+    <Alias n="6" Id="(@1 @2 Type=Client)" />
+    <Alias n="7" Id="(@1 @2 Type=DBWorker)" />
+    <Alias n="8" Id="(@1 @2 Type=Help)" />
+    <Alias n="9" Id="(@1 @2 Type=History)" />
+    <Alias n="10" Id="(@1 @2 Type=MainPage)" />
+    <Alias n="11" Id="(@1 @2 Type=ManagerMenu)" />
+    <Alias n="12" Id="(@1 @2 Type=MenuUser)" />
+    <Alias n="13" Id="(@1 @2 Type=News)" />
+    <Alias n="14" Id="(@1 @2 Type=OperationClass)" />
+    <Alias n="15" Id="(@1 @2 Type=Report)" />
+    <Alias n="16" Id="(@1 @2 Type=SearchOperations)" />
+    <Alias n="17" Id="(@1 @2 Type=Settings)" />
+    <Alias n="18" Id="(@1 @2 Type=TransferPage)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Ошибка" ValueLabel="Уровень ошибки">
+      <Condition Expression="HasValue('ErrorLevel')" />
+      <Setter Property="Icon" Value="Node.Error" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="82e77007-a20d-4c3f-a4e2-8fd24cda9030.OutputPath" Value="C:\Users\djraz\Desktop\BRB\BRB\bin\x86\Debug\BRB.exe" />
+    <Path Id="82e77007-a20d-4c3f-a4e2-8fd24cda9030.OutputPathUri" Value="file:///C:/Users/djraz/Desktop/BRB/BRB/bin/x86/Debug/BRB.exe" />
+  </Paths>
+</DirectedGraph>

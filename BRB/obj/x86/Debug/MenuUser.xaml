@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="BRB.MenuUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BRB"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:ConnectionId='1' x:Name="title_menuUser" TextWrapping="Wrap" TextAlignment="Center" Grid.ColumnSpan="2" Foreground="White" HorizontalAlignment="Center" FontSize="24" FontFamily="Microsoft MHei" Height="auto"></TextBlock>
+        <StackPanel x:ConnectionId='2' Grid.Row="1" Grid.Column="0" Orientation="Vertical"                         >
+            <TextBlock x:ConnectionId='18' x:Name="PayIcon" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center" FontSize="40" Text="&#xE719;"  Foreground="White"></TextBlock>
+            <TextBlock x:ConnectionId='19' x:Name="Payment" Text="Платежи" Foreground="White" FontSize="27" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+        <StackPanel x:ConnectionId='3' Grid.Row="1" Grid.Column="1" Orientation="Vertical"                        >
+            <TextBlock x:ConnectionId='16' x:Name="NumIcon" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center" FontSize="40" Text="&#xE8A6;"  Foreground="White"></TextBlock>
+            <TextBlock x:ConnectionId='17' x:Name="Number" Text="Счет" Foreground="White" FontSize="27" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+        <StackPanel x:ConnectionId='4' Grid.Row="2" Grid.Column="0" Orientation="Vertical"                         >
+            <TextBlock x:ConnectionId='14' x:Name="CardIcon" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center" FontSize="40" Text="&#xE717;"  Foreground="White"></TextBlock>
+            <TextBlock x:ConnectionId='15' x:Name="Contact" Text="Контакты" Foreground="White" FontSize="27" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+        <StackPanel x:ConnectionId='5' Grid.Row="2" Grid.Column="1" Orientation="Vertical"                        >
+            <TextBlock x:ConnectionId='12' x:Name="HisIcon" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center" FontSize="40" Text="&#xE8FD;"  Foreground="White"></TextBlock>
+            <TextBlock x:ConnectionId='13' x:Name="History" Text="История" Foreground="White" FontSize="27" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+        <StackPanel x:ConnectionId='6' Grid.Row="3" Grid.Column="0" Orientation="Vertical"                     >
+            <TextBlock x:ConnectionId='10' x:Name="NewsIcon" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center" FontSize="40" Text="&#xE70F;"  Foreground="White"></TextBlock>
+            <TextBlock x:ConnectionId='11' x:Name="News" Text="Новости" Foreground="White" FontSize="27" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+        <StackPanel x:ConnectionId='7' Grid.Row="3" Grid.Column="1" Orientation="Vertical"                         >
+            <TextBlock x:ConnectionId='8' x:Name="SetIcon" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center" FontSize="40" Text="&#xE713;"  Foreground="White"></TextBlock>
+            <TextBlock x:ConnectionId='9' x:Name="Settings" Text="Настройки" Foreground="White" FontSize="27" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
+

@@ -1,0 +1,2 @@
+MainPackage=C:\Users\djraz\Desktop\BRB\BRB\bin\x64\Debug\BRB_1.0.0.0_x64_Debug.appx
+SymbolPackage=C:\Users\djraz\Desktop\BRB\BRB\AppPackages\BRB_1.0.0.0_Debug_Test\BRB_1.0.0.0_x64_Debug.appxsym

@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="BRB.ManagerMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BRB"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="Title" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,75" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="White" Text="Добро пожаловать, "/>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" PointerMoved="StackPanel_PointerMoved">
+            <TextBlock Foreground="#939292" Margin="0,0,0,50" FontSize="100" FontFamily="Segoe MDL2 Assets" Text="&#xE11A;" HorizontalAlignment="Center" />
+            <TextBlock Text="Поиск" HorizontalAlignment="Center" Margin="0,10,0,0" Foreground="#939292" FontSize="50" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" PointerMoved="StackPanel_PointerMoved_1" PointerExited="StackPanel_PointerExited" Tapped="Accounts_Tapped">
+            <TextBlock x:Name="accountIcon" Foreground="#939292" Margin="0,0,0,50" FontSize="100" FontFamily="Segoe MDL2 Assets" Text="&#xE8B8;" HorizontalAlignment="Center" />
+            <TextBlock x:Name="accountTitle" Text="Аккаунты" TextWrapping="WrapWholeWords" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" Foreground="#939292" FontSize="50" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" PointerMoved="StackPanel_PointerMoved_1" PointerExited="StackPanel_PointerExited" Tapped="Repotrs_Tapped">
+            <TextBlock Foreground="#939292" Margin="0,0,0,50" FontSize="100" FontFamily="Segoe MDL2 Assets" Text="&#xE7C3;" HorizontalAlignment="Center" />
+            <TextBlock Text="Отчет" TextWrapping="WrapWholeWords" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" Foreground="#939292" FontSize="50" />
+        </StackPanel>
+        <StackPanel x:Name="searchOperations" Visibility="Collapsed" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" PointerExited="searchOperations_PointerExited">
+            <TextBlock Text="- по дате" TextWrapping="WrapWholeWords" TextAlignment="Left" HorizontalAlignment="Center" Margin="0,0,0,0" Foreground="#939292" FontSize="30" PointerMoved="TextColorChange" PointerExited="DefaultColor" Tapped="DateSearch" />
+            <TextBlock Text="- по операции" TextWrapping="WrapWholeWords" TextAlignment="Left" HorizontalAlignment="Center" Margin="0,0,0,0" Foreground="#939292" FontSize="30" PointerMoved="TextColorChange" PointerExited="DefaultColor" Tapped="OperationSearch" />
+            <TextBlock Text="- по аккаунту" TextWrapping="WrapWholeWords" TextAlignment="Left" HorizontalAlignment="Center" Margin="0,0,0,0" Foreground="#939292" FontSize="30" PointerMoved="TextColorChange" PointerExited="DefaultColor" Tapped="IdSearch" />
+        </StackPanel>
+        <ContentDialog x:Name="SearchDialog" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Title="Введите критерий" PrimaryButtonText="Найти" SecondaryButtonText="Отмена">
+        </ContentDialog>
+        <ContentDialog x:Name="ExitDialog" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Title="Выйти из аккаунта?" PrimaryButtonText="Да" SecondaryButtonText="Отмена">
+        </ContentDialog>
+    </Grid>
+</Page>

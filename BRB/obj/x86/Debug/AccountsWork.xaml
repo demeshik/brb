@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="BRB.AccountsWork"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BRB"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition  Width="2*" />
+            <ColumnDefinition  Width="2*" />
+            <ColumnDefinition  Width="2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:ConnectionId='1' x:Name="Title" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="White" Text="Работа с аккаунтами"/>
+        <TextBlock x:ConnectionId='2' x:Name="AccountLabel" Visibility="Collapsed" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="30" Foreground="White" Text="Выберите аккаунт: "/>
+        <FlipView x:ConnectionId='3' x:Name="ClientsView" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Background="Black">
+            <!--<FlipViewItem>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" BorderBrush="Red" BorderThickness="5" >
+                        <TextBlock  Foreground="White" TextAlignment="Center" FontSize="30" Text="Hello" />
+                        <TextBlock  Foreground="White" FontSize="30" Text="Hello" />
+                        <TextBlock  Foreground="White" FontSize="30" Text="Hello" />
+                        <TextBlock  Foreground="White" FontSize="30" Text="Hello" />
+                        <TextBlock  Foreground="White" FontSize="30" Text="Hello" />
+                    </StackPanel>
+                </Grid>
+            </FlipViewItem>-->
+        </FlipView>
+        <TextBlock x:ConnectionId='4' x:Name="ChooseLabel" Visibility="Collapsed" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontSize="30" Foreground="White" Text="Выберите операцию:"/>
+        <ProgressRing x:ConnectionId='5' x:Name="Ring" Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="4" Foreground="Red" Width="250" Height="250" />
+        <Grid x:ConnectionId='6' x:Name="AddDeleteGrid" Visibility="Collapsed" Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel x:ConnectionId='18' x:Name="AddPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center"                    >
+                <TextBlock Text="&#xE710;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="70" Foreground="White" Margin="0,0,20,0" />
+                <TextBlock Text="Добавить" VerticalAlignment="Center" FontSize="35" Foreground="White" />
+            </StackPanel>
+            <StackPanel x:ConnectionId='19' x:Name="ClearPanel" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"                      >
+                <TextBlock Text="&#xE894;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="70" Foreground="Gray" Margin="0,0,20,0" />
+                <TextBlock Text="Удалить" VerticalAlignment="Center" FontSize="35" Foreground="Gray" />
+            </StackPanel>
+        </Grid>
+        <Grid x:ConnectionId='7' x:Name="EditBlockGrid" Visibility="Collapsed" Grid.Row="3" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel x:ConnectionId='16' x:Name="EditPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center"                     >
+                <TextBlock Text="&#xE70F;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="70" Foreground="Gray" Margin="0,0,20,0" />
+                <TextBlock Text="Изменить" VerticalAlignment="Center" FontSize="35" Foreground="Gray" />
+            </StackPanel>
+            <StackPanel x:ConnectionId='17' x:Name="BlockPanel" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"                      >
+                <TextBlock Text="&#xE730;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="70" Foreground="Gray" Margin="0,0,20,0" />
+                <TextBlock Text="Блокировка" VerticalAlignment="Center" FontSize="35" Foreground="Gray" />
+            </StackPanel>
+        </Grid>
+        <ProgressRing x:ConnectionId='8' x:Name="ProgRing" Visibility="Collapsed" Grid.Column="3" Grid.ColumnSpan="5" Grid.Row="3" Foreground="Gray" HorizontalAlignment="Center" Width="150" Height="150" />
+        <ContentDialog x:ConnectionId='9' x:Name="AddEditDialog" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Title="Добавить клиента" PrimaryButtonText="Добавить" SecondaryButtonText="Отмена">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Во всех полях разрешен ввод лишь цифр и символов латинского алфавита." TextWrapping="WrapWholeWords" Foreground="Gray" />
+                <TextBox x:ConnectionId='10' x:Name="AddID" PlaceholderText="ID(уникальный, цифры)" FontSize="24"                                 />
+                <TextBox x:ConnectionId='11' x:Name="AddName" PlaceholderText="Имя(до 50 символов)" FontSize="24"                                   />
+                <TextBox x:ConnectionId='12' x:Name="AddLogin" PlaceholderText="Логин(до 12 символов)" FontSize="24"                                     />
+                <TextBox x:ConnectionId='13' x:Name="AddPass" PlaceholderText="Пароль(до 20 символов)" FontSize="24"                                   />
+                <TextBox x:ConnectionId='14' x:Name="AddCode" PlaceholderText="Номер счета(до 12 символов)"                                     FontSize="24" />
+                <TextBox x:ConnectionId='15' x:Name="AddCash" PlaceholderText="Стартовый капитал(целое число)" FontSize="24"                                   />
+            </StackPanel>
+        </ContentDialog>
+    </Grid>
+</Page>
+
