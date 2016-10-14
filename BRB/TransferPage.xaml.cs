@@ -77,7 +77,7 @@ namespace BRB
                 operation.Date = DateTime.Now;
                 bool check = false;
                 progressBar.Visibility = Visibility.Visible;
-                check = await DBWorker.PrepareOperationAsync(fio, operation);
+                check = await DBWorker.PrepareOperation(fio, operation);
                 progressBar.Visibility = Visibility.Collapsed;
                 if (check)
                 {

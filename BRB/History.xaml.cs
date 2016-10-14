@@ -36,7 +36,7 @@ namespace BRB
         public async void Fill()
         {
             List<OperationClass> operations = null;
-            operations = await DBWorker.GetHistoryAsync(name);
+            operations = await DBWorker.GetHistory(name);
             if (operations.Count == 0)
             {
                 TextBlock text = new TextBlock();

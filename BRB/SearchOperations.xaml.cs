@@ -51,7 +51,7 @@ namespace BRB
         {
             Ring.Visibility = Visibility.Visible;
             Ring.IsActive = true;
-            List<OperationClass> operations = await DBWorker.GetOperationsAsync("Дата", Date);
+            List<OperationClass> operations = await DBWorker.GetOperations("Дата", Date);
             FillList(operations);
             Ring.Visibility = Visibility.Collapsed;
             Ring.IsActive = false;
@@ -60,7 +60,7 @@ namespace BRB
         {
             Ring.Visibility = Visibility.Visible;
             Ring.IsActive = true;
-            List<OperationClass> operations = await DBWorker.GetOperationsAsync("Операция", Operation);
+            List<OperationClass> operations = await DBWorker.GetOperations("Операция", Operation);
             FillList(operations);
             Ring.Visibility = Visibility.Collapsed;
             Ring.IsActive = false;
@@ -69,7 +69,7 @@ namespace BRB
         {
             Ring.Visibility = Visibility.Visible;
             Ring.IsActive = true;
-            List<OperationClass> operations = await DBWorker.GetOperationsAsync("ID", ID);
+            List<OperationClass> operations = await DBWorker.GetOperations("ID", ID);
             if (operations.Count == 0)
                 Help.Message("Операций для такого ID не найдено. Проверьте все данные и повторите попытку", "Ошибка");
             else
@@ -97,9 +97,7 @@ namespace BRB
                 {
                     if (k == 6)
                     {
-                        k = 0;
-                        i = 0;
-                        j = 0;
+                        k = 0;  i = 0;  j = 0;
                         OperationsView.Items.Add(grid);
                         grid = new Grid();
                         column1 = new ColumnDefinition();
@@ -121,14 +119,12 @@ namespace BRB
                     }
                     else
                     {
-                        i = 0;
-                        j++;
+                        i = 0; j++;
                         StackPanel panel = PanelFill(operation);
                         grid.Children.Add(panel);
                         Grid.SetColumn(panel, i);
                         Grid.SetRow(panel, j);
-                        i++;
-                        k++;
+                        i++;  k++;
                     }
                 }
                 else

@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Threading;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using Windows.Storage;
@@ -10,32 +10,26 @@ namespace BRB
 {
     public static class DBWorker
     {
-        static string ConnectionString = string.Empty;
         static int clientID;
         static int sclientID;
         static decimal clientCash;
         static decimal sclientCash;
-        static bool inited = false;
-        private async static void ConnectStringInit()
+        private async static Task<string> ConnectStringInit()
         {
             StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///app.config"));
             XmlDocument xmlConfiguration = await XmlDocument.LoadFromFileAsync(file);
             IXmlNode node = xmlConfiguration.DocumentElement.SelectSingleNode("./appSettings/add[@key='ConnectionString']/@value");
-            ConnectionString = (string)node.NodeValue;
-            inited = true;
+            return (string)node.NodeValue;
         }
-
-
-        private static string CheckClient(string login, string password)
+        
+        public async static Task<string> CheckClient(string login, string password)
         {
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { } 
+            App.Token = new CancellationTokenSource();
             string ss = "";
             string queryString = $@"select ID, NAME, BLOCK from users where LOGIN='{login}' and PASSWORD='{password}';";
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 MySqlCommand command = new MySqlCommand(queryString, con);
                 try
                 {
@@ -58,16 +52,14 @@ namespace BRB
             else
                 return null;
         }
-        private static string CheckManager(string login, string password)
+        public async static Task<string> CheckManager(string login, string password)
         {
-            inited = false;
-            ConnectStringInit();
-            while (!inited) {   }
+            App.Token = new CancellationTokenSource();
             string ss = "";
             string queryString = $@"select Name from managers where Login='{login}' and Password='{password}';";
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 MySqlCommand command = new MySqlCommand(queryString, con);
                 try
                 {
@@ -88,15 +80,13 @@ namespace BRB
             else
                 return null;
         }
-        private static Client GetInformation(string Name)
+        public async static Task<Client> GetInformation(string Name)
         {
+            App.Token = new CancellationTokenSource();
             Client person = new Client();
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
             using (MySqlConnection connect = new MySqlConnection())
             {
-                connect.ConnectionString = ConnectionString;
+                connect.ConnectionString = await ConnectStringInit();
                 connect.Open();
                 try
                 {
@@ -123,18 +113,16 @@ namespace BRB
             }
             return person;
         }
-        private static List<Client> GetClients()
+        public async static Task<List<Client>> GetClients()
         {
+            App.Token = new CancellationTokenSource();
             if (App.IdsList == null)
                 App.IdsList = new List<int>();
             App.IdsList.Clear();
             List<Client> list = new List<Client>();
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
             using (MySqlConnection connect = new MySqlConnection())
             {
-                connect.ConnectionString = ConnectionString;
+                connect.ConnectionString = await ConnectStringInit();
                 connect.Open();
                 try
                 {
@@ -165,16 +153,13 @@ namespace BRB
             }
             return list;
         }
-        private static bool PrepareOperation(string Name , OperationClass operation)
+        public async static Task<bool> PrepareOperation(string Name , OperationClass operation)
         {
+            App.Token = new CancellationTokenSource();
             bool rezult = false;
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
-
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 con.Open();
                 try
                 {
@@ -259,13 +244,11 @@ namespace BRB
             }
             return rezult;
         }
-        private static bool UpdateInformation(string name, string parametr, string value)
+        public async static Task<bool> UpdateInformation(string name, string parametr, string value)
         {
+            App.Token = new CancellationTokenSource();
             string query = string.Empty;
             bool rezult = false;
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
             if (String.Equals(parametr, "Login"))
             {
                 query = $"update users set LOGIN='{value}' where NAME='{name}';";
@@ -276,7 +259,7 @@ namespace BRB
             }
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 con.Open();
                 try
                 {
@@ -295,15 +278,13 @@ namespace BRB
             }
             return rezult;
         }
-        private static bool UpdateAccountManag(Client person, string oldID)
+        public async static Task<bool> UpdateAccountManag(Client person, string oldID)
         {
+            App.Token = new CancellationTokenSource();
             bool rezult = false;
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 con.Open();
                 try
                 {
@@ -322,15 +303,13 @@ namespace BRB
             }
             return rezult;
         }
-        private static bool AddClient(Client person)
+        public async static Task<bool> AddClient(Client person)
         {
+            App.Token = new CancellationTokenSource();
             bool rezult = false;
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 con.Open();
                 try
                 {
@@ -350,16 +329,14 @@ namespace BRB
             }
             return rezult;
         }
-        private static bool BlockAccount(string name, bool Block)
+        public async static Task<bool> BlockAccount(string name, bool Block)
         {
+            App.Token = new CancellationTokenSource();
             bool rezult = false;
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
 
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 con.Open();
                 try
                 {
@@ -378,18 +355,16 @@ namespace BRB
             }
             return rezult;
         }
-        private static bool DeleteAccount(string name, int id)
+        public async static Task<bool> DeleteAccount(string name, int id)
         {
+            App.Token = new CancellationTokenSource();
             bool rezult = false;
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
 
             App.IdsList.Remove(id);
 
             using (MySqlConnection con = new MySqlConnection())
             {
-                con.ConnectionString = ConnectionString;
+                con.ConnectionString = await ConnectStringInit();
                 con.Open();
                 try
                 {
@@ -408,16 +383,14 @@ namespace BRB
             }
             return rezult;
         }
-        private static List<OperationClass> GetHistory(string Name)
+        public async static Task<List<OperationClass>> GetHistory(string Name)
         {
+            App.Token = new CancellationTokenSource();
             List<OperationClass> operations = new List<OperationClass>();
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
 
             using (MySqlConnection connect = new MySqlConnection())
             {
-                connect.ConnectionString = ConnectionString;
+                connect.ConnectionString = await ConnectStringInit();
                 connect.Open();
                 try
                 {
@@ -462,15 +435,13 @@ namespace BRB
             }
             return operations;
         }
-        private static List<OperationClass> GetOperations(string parametr, string value)
+        public async static Task<List<OperationClass>> GetOperations(string parametr, string value)
         {
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
+            App.Token = new CancellationTokenSource();
             List<OperationClass> OperList = new List<OperationClass>();
             using (MySqlConnection connect = new MySqlConnection())
             {
-                connect.ConnectionString = ConnectionString;
+                connect.ConnectionString = await ConnectStringInit();
                 connect.Open();
                 try
                 {
@@ -525,15 +496,13 @@ namespace BRB
             }
             return OperList;
         }
-        private static List<OperationClass> GetOperations(string parametr, List<DateTime> dates)
+        public async static Task<List<OperationClass>> GetOperations(string parametr, List<DateTime> dates)
         {
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
+            App.Token = new CancellationTokenSource();
             List<OperationClass> OperList = new List<OperationClass>();
             using (MySqlConnection connect = new MySqlConnection())
             {
-                connect.ConnectionString = ConnectionString;
+                connect.ConnectionString = await ConnectStringInit();
                 connect.Open();
                 try
                 {
@@ -573,15 +542,13 @@ namespace BRB
             }
             return OperList;
         }
-        private static List<OperationClass> GetOperations()
+        public async static Task<List<OperationClass>> GetOperations()
         {
-            inited = false;
-            ConnectStringInit();
-            while (!inited) { }
+            App.Token = new CancellationTokenSource();
             List<OperationClass> OperList = new List<OperationClass>();
             using (MySqlConnection connect = new MySqlConnection())
             {
-                connect.ConnectionString = ConnectionString;
+                connect.ConnectionString = await ConnectStringInit();
                 connect.Open();
                 try
                 {
@@ -615,117 +582,5 @@ namespace BRB
             return OperList;
         }
 
-        public async static Task<string> CheckClientAsync(string Login, string Password)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return CheckClient(Login, Password);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<string> CheckManagerAsync(string Login, string Password)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return CheckManager(Login, Password);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<Client> GetInformationAsync(string Name)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return GetInformation(Name);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<List<Client>> GetClientsAsync()
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return GetClients();
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<bool> PrepareOperationAsync(string Name, OperationClass oper)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return PrepareOperation(Name, oper);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<bool> UpdateInformationAsync(string Name, string Parametr, string Value)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return UpdateInformation(Name, Parametr, Value);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<bool> UpdateAccoutnManagAsync(Client person, string OldID)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return UpdateAccountManag(person, OldID);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<bool> AddClientAsync(Client person)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return AddClient(person);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<bool> DeleteAccountAsync(string Name, int ID)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return DeleteAccount(Name, ID);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<bool> BlockAccountAsync(string Name, bool Block)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return BlockAccount(Name, Block);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<List<OperationClass>> GetHistoryAsync(string Name)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return GetHistory(Name);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<List<OperationClass>> GetOperationsAsync(string Parametr, string Value)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return GetOperations(Parametr, Value);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<List<OperationClass>> GetOperationsAsync(string Parametr, List<DateTime> Dates)
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return GetOperations(Parametr, Dates);
-            }, TaskCreationOptions.LongRunning);
-        }
-        public async static Task<List<OperationClass>> GetOperationsAsync()
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                App.Token = new CancellationTokenSource();
-                return GetOperations();
-            }, TaskCreationOptions.LongRunning);
-        }
     }
 }

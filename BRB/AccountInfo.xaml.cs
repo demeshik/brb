@@ -34,7 +34,7 @@ namespace BRB
         }
         public async void GetInfo()
         {
-            Client person = await DBWorker.GetInformationAsync(fioname);
+            Client person = await DBWorker.GetInformation(fioname);
             name.Text += fioname;
             loginname.Text += person.Login;
             acccode.Text += person.AccCode;

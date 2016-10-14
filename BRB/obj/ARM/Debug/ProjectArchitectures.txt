@@ -1,1 +1,1 @@
-C:\Users\djraz\Desktop\BRB\BRB\BRB.csproj;arm
+D:\BRB\BRB\BRB.csproj;arm

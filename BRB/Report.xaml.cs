@@ -40,7 +40,7 @@ namespace BRB
             Ring.IsActive = true;
             if (String.Equals(((TextBlock)sender).Name, "Day"))
             {
-                List<OperationClass> operations = await DBWorker.GetOperationsAsync("Дата", DateTime.Today.ToString("dd.MM.yyyy"));
+                List<OperationClass> operations = await DBWorker.GetOperations("Дата", DateTime.Today.ToString("dd.MM.yyyy"));
                 if (operations.Count == 0)
                     NoOperations();
                 else
@@ -48,7 +48,7 @@ namespace BRB
             }
             if (String.Equals(((TextBlock)sender).Name, "Yesterday"))
             {
-                List<OperationClass> operations = await DBWorker.GetOperationsAsync("Дата", DateTime.Today.Subtract(new TimeSpan(1, 0, 0, 0, 0)).ToString("dd.MM.yyyy"));
+                List<OperationClass> operations = await DBWorker.GetOperations("Дата", DateTime.Today.Subtract(new TimeSpan(1, 0, 0, 0, 0)).ToString("dd.MM.yyyy"));
                 if (operations.Count == 0)
                     NoOperations();
                 else
@@ -60,7 +60,7 @@ namespace BRB
                 List<DateTime> dateList = new List<DateTime>();
                 dateList.Add(firstDate);
                 dateList.Add(DateTime.Today);
-                List<OperationClass> operations = await DBWorker.GetOperationsAsync("", dateList);
+                List<OperationClass> operations = await DBWorker.GetOperations("", dateList);
                 if (operations.Count == 0)
                     NoOperations();
                 else
@@ -72,7 +72,7 @@ namespace BRB
                 List<DateTime> dateList = new List<DateTime>();
                 dateList.Add(firstDate);
                 dateList.Add(DateTime.Today);
-                List<OperationClass> operations = await DBWorker.GetOperationsAsync("", dateList);
+                List<OperationClass> operations = await DBWorker.GetOperations("", dateList);
                 if (operations.Count == 0)
                     NoOperations();
                 else
@@ -80,7 +80,7 @@ namespace BRB
             }
             if (String.Equals(((TextBlock)sender).Name, "All"))
             {
-                List<OperationClass> operations = await DBWorker.GetOperationsAsync();
+                List<OperationClass> operations = await DBWorker.GetOperations();
                 if (operations.Count == 0)
                     NoOperations();
                 else

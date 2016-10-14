@@ -29,7 +29,7 @@ namespace BRB
             prog.Visibility = Visibility.Visible;
             if (String.Equals(Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily, "Windows.Mobile"))
             {
-                rezult = await DBWorker.CheckClientAsync(login.Text, password.Password);
+                rezult = await DBWorker.CheckClient(login.Text, password.Password);
                 if (rezult == null)
                 {
                     Help.Message("Такой пользователь не найден в базе данных. Пожалуйста, проверьте введенные данные и попробуйте еще раз.", "Ошибка");
@@ -41,7 +41,7 @@ namespace BRB
             }
             else
             {
-                rezult = await DBWorker.CheckManagerAsync(login.Text, password.Password);
+                rezult = await DBWorker.CheckManager(login.Text, password.Password);
                 if (rezult == null)
                 {
                     Help.Message("Такой пользователь не найден в базе данных, либо у вас нет доступа. Пожалуйста, проверьте введенные данные и попробуйте еще раз.", "Ошибка");

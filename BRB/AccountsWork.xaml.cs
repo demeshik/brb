@@ -42,7 +42,7 @@ namespace BRB
         {
             Ring.IsActive = true;
             Ring.Visibility = Visibility.Visible;
-            List<Client> clients = await DBWorker.GetClientsAsync();
+            List<Client> clients = await DBWorker.GetClients();
             FillView(clients);
             Ring.IsActive = false;
             Ring.Visibility = Visibility.Collapsed;
@@ -235,18 +235,10 @@ namespace BRB
             ContentDialogResult rezult = await AddEditDialog.ShowAsync();
             if (rezult == ContentDialogResult.Primary)
             {
-                Client person = new Client();
-                person.ID = int.Parse(AddID.Text);
-                person.Name = AddName.Text;
-                person.Login = AddLogin.Text;
-                person.Password = AddPass.Text;
-                person.AccCode = AddCode.Text;
-                person.Cash = AddCash.Text;
-                person.Block = false;
-
+                Client person = new Client(int.Parse(AddID.Text), AddName.Text, AddLogin.Text, AddPass.Text, AddCode.Text, AddCash.Text,false);
                 ProgRing.Visibility = Visibility.Visible;
                 ProgRing.IsActive = true;
-                rez = await DBWorker.AddClientAsync(person);
+                rez = await DBWorker.AddClient(person);
 
                 ProgRing.IsActive = false;
                 ProgRing.Visibility = Visibility.Collapsed;
@@ -297,18 +289,11 @@ namespace BRB
                 if (rezult == ContentDialogResult.Primary)
                 {
                     checkEdit = 0;
-                    Client person = new Client();
-                    person.ID = int.Parse(AddID.Text);
-                    person.Name = AddName.Text;
-                    person.Login = string.Empty;
-                    person.Password = string.Empty;
-                    person.AccCode = AddCode.Text;
-                    person.Cash = AddCash.Text;
-                    person.Block = bool.Parse(((TextBlock)ChoosePanel.Children[4]).Text.Remove(0, 12));
+                    Client person = new Client(int.Parse(AddID.Text), AddName.Text,"","", AddCode.Text, AddCash.Text, bool.Parse(((TextBlock)ChoosePanel.Children[4]).Text.Remove(0, 12)));
 
                     ProgRing.Visibility = Visibility.Visible;
                     ProgRing.IsActive = true;
-                    bool rez = await DBWorker.UpdateAccoutnManagAsync(person, oldID);
+                    bool rez = await DBWorker.UpdateAccountManag(person, oldID);
 
                     ProgRing.IsActive = false;
                     ProgRing.Visibility = Visibility.Collapsed;
@@ -338,9 +323,9 @@ namespace BRB
                 TextBlock NameBox = (TextBlock)ChoosePanel.Children[1];
                 string name = NameBox.Text.Remove(0, 5);
                 if (((TextBlock)BlockPanel.Children[1]).Text == "Заблокировать")
-                    rezult = await DBWorker.BlockAccountAsync(name, true);
+                    rezult = await DBWorker.BlockAccount(name, true);
                 else
-                    rezult = await DBWorker.BlockAccountAsync(name, false);
+                    rezult = await DBWorker.BlockAccount(name, false);
                 ProgRing.IsActive = false;
                 ProgRing.Visibility = Visibility.Collapsed;
                 CheckAgreeRefresh();
@@ -355,7 +340,7 @@ namespace BRB
                 string name = NameBox.Text.Remove(0, 5);
                 TextBlock IdBox = (TextBlock)ChoosePanel.Children[0];
                 int ID = int.Parse(IdBox.Text.Remove(0, 4));
-                bool x = await DBWorker.DeleteAccountAsync(name, ID);
+                bool x = await DBWorker.DeleteAccount(name, ID);
                 CheckAgreeRefresh();
             }
         }
@@ -364,7 +349,7 @@ namespace BRB
             if (command.Label == "Да")
             {
                 ClientsView.Items.Clear();
-                List<Client> clients = await DBWorker.GetClientsAsync();
+                List<Client> clients = await DBWorker.GetClients();
                 FillView(clients);
                 OperationsColor(Windows.UI.Colors.Gray);
                 ChoosePanel = null;

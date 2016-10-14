@@ -75,15 +75,14 @@ namespace BRB
             dialog.PrimaryButtonClick += Dialog_PrimaryButtonClick;
 
             dialog.SecondaryButtonText = "Cancel";
-            dialog.SecondaryButtonClick += delegate {
-            };
+            dialog.SecondaryButtonClick += delegate {};
 
             ContentDialogResult result = await dialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
                 loginRing.Visibility = Visibility.Visible;
                 loginRing.IsActive = true;
-                bool rezult = await DBWorker.UpdateInformationAsync(fio, "Login", newLogin);
+                bool rezult = await DBWorker.UpdateInformation(fio, "Login", newLogin);
                 loginRing.Visibility = Visibility.Collapsed;
                 loginRing.IsActive = false;
                 Help.Message("Данные успешно обновлены", "Поздравляем");
@@ -143,7 +142,7 @@ namespace BRB
             {
                 passRing.Visibility = Visibility.Visible;
                 passRing.IsActive = true;
-                bool rezult = await DBWorker.UpdateInformationAsync(fio, "Pass", newPass);
+                bool rezult = await DBWorker.UpdateInformation(fio, "Pass", newPass);
                 passRing.Visibility = Visibility.Collapsed;
                 passRing.IsActive = false;
                 Help.Message("Данные успешно обновлены", "Поздравляем");
@@ -202,7 +201,7 @@ namespace BRB
             ring.IsActive = true;
             if (block.Text == "Заблокировать")
             {
-                rezult = await DBWorker.BlockAccountAsync(fio, true);
+                rezult = await DBWorker.BlockAccount(fio, true);
                 ring.Visibility = Visibility.Collapsed;
                 ring.IsActive = false;
                 if (rezult)
@@ -216,7 +215,7 @@ namespace BRB
             }
             else
             {
-                rezult = await DBWorker.BlockAccountAsync(fio, false);
+                rezult = await DBWorker.BlockAccount(fio, false);
                 ring.Visibility = Visibility.Collapsed;
                 ring.IsActive = false;
                 if (rezult)
